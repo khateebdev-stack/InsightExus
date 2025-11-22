@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { projects } from "@/lib/projects";
+import { content } from "@/lib/content";
 import { motion } from "framer-motion";
 import { ArrowLeft, CheckCircle2, ExternalLink } from "lucide-react";
 import Image from "next/image";
@@ -12,7 +12,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 export default function ProjectPage({ params }) {
-    const project = projects.find((p) => p.slug === params.slug);
+    const project = content.projects.find((p) => p.slug === params.slug);
 
     if (!project) {
         return notFound();

@@ -8,27 +8,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { content } from "@/lib/content";
 
-const team = [
-    {
-        name: "Alex Chen",
-        role: "Chief Architect",
-        bio: "Ex-Google Principal Engineer. 15+ years scaling distributed systems.",
-        image: "/team-1.jpg",
-    },
-    {
-        name: "Sarah Miller",
-        role: "Head of AI",
-        bio: "PhD in Computer Vision. Led AI initiatives at major fintech firms.",
-        image: "/team-2.jpg",
-    },
-    {
-        name: "James Wilson",
-        role: "VP of Engineering",
-        bio: "Specialist in high-frequency trading platforms and real-time data.",
-        image: "/team-3.jpg",
-    },
-];
-
 export function Team() {
     return (
         <Section className="bg-background relative mb-20">
@@ -41,12 +20,15 @@ export function Team() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {team.map((member, index) => (
+                    {content.team.members.map((member, index) => (
                         <Card key={index} className="overflow-hidden group border-primary/10 hover:border-primary/30">
-                            <div className="relative h-80 w-full overflow-hidden">
-                                <div className="absolute inset-0 bg-muted animate-pulse" /> {/* Placeholder */}
-                                {/* <Image src={member.image} alt={member.name} fill className="object-cover transition-transform duration-500 group-hover:scale-105" /> */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+                            <div className="relative h-80 w-full overflow-hidden bg-muted">
+                                {/* Placeholder for missing image - stylish gradient with initials */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                                    <span className="text-6xl font-bold text-primary/20">{member.name.charAt(0)}</span>
+                                </div>
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-90" />
 
                                 <div className="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                                     <h3 className="text-2xl font-bold text-foreground">{member.name}</h3>

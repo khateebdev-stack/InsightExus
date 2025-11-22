@@ -10,9 +10,10 @@ import { Footer } from "@/components/Footer";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { Process } from "@/components/Process";
-import { TechStack } from "@/components/TechStack";
+import { DigitalEngine } from "@/components/DigitalEngine";
+import { Testimonials } from "@/components/Testimonials";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Cpu, Layers, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -93,13 +94,7 @@ export default function Home() {
                         className="relative h-[400px] md:h-[600px] w-full flex items-center justify-center perspective-1000"
                     >
                         <div className="relative w-full h-full animate-float">
-                            <Image
-                                src="/hero-3d-v2.png"
-                                alt="Digital Engine Core"
-                                fill
-                                className="object-contain drop-shadow-2xl"
-                                priority
-                            />
+                            <DigitalEngine />
                         </div>
                         {/* Decorative Glows */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-primary/20 rounded-full blur-[100px] -z-10" />
@@ -107,9 +102,6 @@ export default function Home() {
                     </motion.div>
                 </div>
             </section>
-
-            {/* Tech Stack Marquee */}
-            <TechStack />
 
             {/* Why Us Section */}
             <WhyUs />
@@ -150,18 +142,11 @@ export default function Home() {
             {/* Process Section */}
             <Process />
 
+            {/* Testimonials Section */}
+            <Testimonials />
+
             {/* Team Preview (Small) */}
-            <Section className="bg-muted/30 mt-20 py-20 mb-20">
-                <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">{content.team.title}</h2>
-                    <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                        {content.team.description}
-                    </p>
-                    <Button variant="outline" className="whitespace-nowrap" asChild>
-                        <Link href="/team">{content.team.cta} <ArrowRight className="w-4 h-4 ml-2" /></Link>
-                    </Button>
-                </div>
-            </Section>
+            <Team />
 
             {/* CTA Section */}
             <Section className="bg-primary/5 border-y border-primary/10">

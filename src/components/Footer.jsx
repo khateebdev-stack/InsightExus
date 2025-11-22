@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { content } from "@/lib/content";
 
 export function Footer() {
     return (
@@ -14,7 +15,7 @@ export function Footer() {
                             Insightexus
                         </Link>
                         <p className="text-muted-foreground max-w-sm mb-8">
-                            Building Digital Engines for the next generation of high-growth startups and enterprises. Scalable, secure, and future-proof.
+                            {content.footer.description}
                         </p>
                         <div className="flex gap-4">
                             <SocialLink href="#" icon={<Github className="w-5 h-5" />} />
@@ -25,29 +26,27 @@ export function Footer() {
                     </div>
 
                     <div>
-                        <h3 className="font-semibold text-foreground mb-6">Services</h3>
+                        <h3 className="font-semibold text-foreground mb-6">{content.footer.services.title}</h3>
                         <ul className="space-y-4">
-                            <FooterLink href="/services">Mobile Development</FooterLink>
-                            <FooterLink href="/services">Web Architecture</FooterLink>
-                            <FooterLink href="/services">AI Solutions</FooterLink>
-                            <FooterLink href="/services">DevOps & Cloud</FooterLink>
+                            {content.footer.services.items.map((item, i) => (
+                                <FooterLink key={i} href="/services">{item}</FooterLink>
+                            ))}
                         </ul>
                     </div>
 
                     <div>
-                        <h3 className="font-semibold text-foreground mb-6">Company</h3>
+                        <h3 className="font-semibold text-foreground mb-6">{content.footer.company.title}</h3>
                         <ul className="space-y-4">
-                            <FooterLink href="/about">About Us</FooterLink>
-                            <FooterLink href="/contact">Contact</FooterLink>
-                            <FooterLink href="#">Careers</FooterLink>
-                            <FooterLink href="#">Privacy Policy</FooterLink>
+                            {content.footer.company.items.map((item, i) => (
+                                <FooterLink key={i} href={item.href}>{item.label}</FooterLink>
+                            ))}
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
-                    <p>© {new Date().getFullYear()} Insightexus. All rights reserved.</p>
-                    <p>Designed & Built by Insightexus Team.</p>
+                    <p>© {new Date().getFullYear()} {content.footer.copyright}</p>
+                    <p>{content.footer.credit}</p>
                 </div>
             </div>
         </footer>

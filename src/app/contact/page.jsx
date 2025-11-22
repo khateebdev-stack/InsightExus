@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { content } from "@/lib/content";
 
 export default function ContactPage() {
     return (
@@ -13,9 +14,9 @@ export default function ContactPage() {
             <Navbar />
 
             <section className="pt-32 pb-10 text-center">
-                <h1 className="text-4xl md:text-6xl font-bold mb-6">Get in Touch</h1>
+                <h1 className="text-4xl md:text-6xl font-bold mb-6">{content.contact.title}</h1>
                 <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-                    Ready to start your project? We're here to help you build scalable, high-performance solutions.
+                    {content.contact.description}
                 </p>
             </section>
 
@@ -28,28 +29,27 @@ export default function ContactPage() {
                         <Card className="p-6 flex items-start gap-4">
                             <Mail className="w-6 h-6 text-primary mt-1" />
                             <div>
-                                <h3 className="font-semibold mb-1">Email Us</h3>
-                                <p className="text-muted-foreground">contact@insightexus.com</p>
-                                <p className="text-sm text-muted-foreground mt-2">We'll respond within 24 hours.</p>
+                                <h3 className="font-semibold mb-1">{content.contact.info.email.title}</h3>
+                                <p className="text-muted-foreground">{content.contact.info.email.value}</p>
+                                <p className="text-sm text-muted-foreground mt-2">{content.contact.info.email.desc}</p>
                             </div>
                         </Card>
 
                         <Card className="p-6 flex items-start gap-4">
                             <Phone className="w-6 h-6 text-primary mt-1" />
                             <div>
-                                <h3 className="font-semibold mb-1">Call Us</h3>
-                                <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                                <p className="text-sm text-muted-foreground mt-2">Mon-Fri from 9am to 6pm.</p>
+                                <h3 className="font-semibold mb-1">{content.contact.info.phone.title}</h3>
+                                <p className="text-muted-foreground">{content.contact.info.phone.value}</p>
+                                <p className="text-sm text-muted-foreground mt-2">{content.contact.info.phone.desc}</p>
                             </div>
                         </Card>
 
                         <Card className="p-6 flex items-start gap-4">
                             <MapPin className="w-6 h-6 text-primary mt-1" />
                             <div>
-                                <h3 className="font-semibold mb-1">Visit Us</h3>
+                                <h3 className="font-semibold mb-1">{content.contact.info.address.title}</h3>
                                 <p className="text-muted-foreground">
-                                    123 Tech Park Avenue<br />
-                                    Silicon Valley, CA 94025
+                                    {content.contact.info.address.value}
                                 </p>
                             </div>
                         </Card>
@@ -57,50 +57,77 @@ export default function ContactPage() {
 
                     {/* Contact Form */}
                     <Card className="p-8">
-                        <h2 className="text-2xl font-bold mb-6">Send a Message</h2>
+                        <h2 className="text-2xl font-bold mb-6">{content.contact.form.title}</h2>
                         <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-medium">Name</label>
+                                    <label htmlFor="name" className="text-sm font-medium">{content.contact.form.fields.name}</label>
                                     <input
                                         id="name"
                                         type="text"
-                                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium">Email</label>
+                                    <label htmlFor="email" className="text-sm font-medium">{content.contact.form.fields.email}</label>
                                     <input
                                         id="email"
                                         type="email"
-                                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground"
                                         placeholder="john@example.com"
                                     />
                                 </div>
                             </div>
 
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label htmlFor="service" className="text-sm font-medium">{content.contact.form.fields.service}</label>
+                                    <select
+                                        id="service"
+                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground appearance-none"
+                                    >
+                                        <option>Web Development</option>
+                                        <option>Mobile App</option>
+                                        <option>AI Solution</option>
+                                        <option>Consulting</option>
+                                    </select>
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="budget" className="text-sm font-medium">{content.contact.form.fields.budget}</label>
+                                    <select
+                                        id="budget"
+                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground appearance-none"
+                                    >
+                                        <option>$5k - $10k</option>
+                                        <option>$10k - $25k</option>
+                                        <option>$25k - $50k</option>
+                                        <option>$50k+</option>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div className="space-y-2">
-                                <label htmlFor="subject" className="text-sm font-medium">Subject</label>
+                                <label htmlFor="subject" className="text-sm font-medium">{content.contact.form.fields.subject}</label>
                                 <input
                                     id="subject"
                                     type="text"
-                                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
+                                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground"
                                     placeholder="Project Inquiry"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-medium">Message</label>
+                                <label htmlFor="message" className="text-sm font-medium">{content.contact.form.fields.message}</label>
                                 <textarea
                                     id="message"
                                     rows={5}
-                                    className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors resize-none"
+                                    className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors resize-none text-foreground"
                                     placeholder="Tell us about your project..."
                                 />
                             </div>
 
-                            <Button type="submit" className="w-full">Send Message</Button>
+                            <Button type="submit" className="w-full">{content.contact.form.button}</Button>
                         </form>
                     </Card>
                 </div>

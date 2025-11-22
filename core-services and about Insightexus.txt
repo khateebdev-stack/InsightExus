@@ -1,0 +1,118 @@
+# *Our Core Services*
+
+## *1. Mobile App Development*
+
+We create high-performance, user-friendly mobile apps for startups and enterprises.
+
+*Services Include:*
+
+- Native Android & iOS apps (Kotlin, Swift)
+- Cross-platform apps (Flutter, React Native)
+- Local-first & offline-ready apps
+- *VoIP / Calling Apps (WebRTC)*
+- *Streaming Apps (Live Video, Audio & VOD)*
+- App UI/UX design, optimization & deployment
+
+## *2. Web App Development*
+
+Modern, secure, and responsive web applications with a focus on speed and scalability.
+
+*Services Include:*
+
+- Full-stack apps (React, Next.js, Node.js, Django, etc.)
+- Responsive UI with performance optimization
+- RESTful / GraphQL APIs
+- Real-time web apps (Socket.io, WebRTC)
+- *Video Streaming Platforms & Dashboards*
+
+## *3. AI-Based SaaS Solutions*
+
+We build intelligent cloud-based products powered by AI and automation.
+
+*Services Include:*
+
+- AI tools (Chatbots, Predictive Analytics, Process Automation)
+- ML/DL model integration (TensorFlow, PyTorch)
+- SaaS product design, architecture & development
+- Cloud deployment (AWS, Azure, GCP)
+- Data-driven analytics dashboards
+
+## *4. System Design & Architecture*
+
+We architect systems that scale securely, perform efficiently, and remain easy to maintain.
+
+*Services Include:*
+
+- *End-to-End System Design (Monolith to Microservices)*
+- *Scalable Application Architecture (Event-Driven, Serverless, Layered, CQRS)*
+- *Database Design & Data Flow Modeling*
+- *API Gateway & Load Balancer Setup*
+- *System Scalability, Reliability & Fault Tolerance Planning*
+- *Technical Documentation & Architectural Diagrams*
+
+Outcome: You get a reliable blueprint for your product — ready for implementation and future scaling.
+
+## *5. Security & Compliance Services*
+
+Protecting your digital products with enterprise-grade security.
+
+*Services Include:*
+
+- Application & API Security Audits (OWASP, PenTesting)
+- Secure Authentication (JWT, OAuth2, Role-based Access)
+- Data Encryption & SSL/TLS Setup
+- Server Hardening & Firewall Configurations
+- DevSecOps integration
+- Compliance (GDPR, HIPAA)
+
+## *6. Backend Development Services*
+
+Powerful backend systems that handle scale and complexity effortlessly.
+
+*Services Include:*
+
+- REST & GraphQL API development (Node.js, GoLang, Django, FastAPI)
+- Scalable Microservices Architecture
+- Database design & optimization (MySQL, PostgreSQL, MongoDB)
+- Authentication & Authorization systems
+- Real-time APIs and streaming backends
+
+## *7. DevOps & Cloud Infrastructure*
+
+We ensure your systems are continuously integrated, deployed, and monitored effectively.
+
+*Services Include:*
+
+- CI/CD pipeline setup (GitHub Actions, Jenkins)
+- Dockerization & Kubernetes orchestration
+- Infrastructure as Code (Terraform, Ansible)
+- *Microservice Deployment & Service Mesh Setup (Istio, Linkerd)*
+- Cloud migration & cost optimization
+
+## *8. Server Management*
+
+Reliable server configuration, deployment, and monitoring for peak performance.
+
+*Services Include:*
+
+- Linux / Windows server setup
+- Cloud hosting (AWS, GCP, DigitalOcean, Azure)
+- Load balancing, scaling & automated backups
+- Server performance monitoring & alerts
+
+## *9. Desktop Application Development*
+
+Enterprise-grade desktop apps with modern UIs and cross-platform compatibility.
+
+*Services Include:*
+
+- Windows, macOS, Linux app development
+- Cross-platform (Electron)
+- Integration with APIs, cloud, and databases
+- Secure deployment & maintenance
+
+---
+
+## *Tech Stack*
+
+*React | Next.js | NestJS | Node.js | GoLang | Django | FastAPI | Python | Flutter | React Native | WebRTC | TensorFlow | AWS | Docker | Kubernetes | Kafka | Terraform | Ansible | NGINX | PostgreSQL | MongoDB*

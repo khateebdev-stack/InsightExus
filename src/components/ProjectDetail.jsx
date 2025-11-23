@@ -76,51 +76,152 @@ export function ProjectDetail({ project }) {
             </section>
 
             {/* Stats Section */}
-            <Section className="bg-secondary/20">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {Object.entries(project.stats).map(([key, value], index) => (
-                            <motion.div
-                                key={key}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: index * 0.1 }}
-                                className="bg-background/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 text-center"
-                            >
-                                <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">{key}</h3>
-                                <p className="text-3xl font-bold text-primary">{value}</p>
-                            </motion.div>
+            {project.stats && (
+                <Section className="bg-secondary/20">
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {Object.entries(project.stats).map(([key, value], index) => (
+                                <motion.div
+                                    key={key}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="bg-background/50 backdrop-blur-sm p-6 rounded-xl border border-white/5 text-center"
+                                >
+                                    <h3 className="text-sm uppercase tracking-wider text-muted-foreground mb-2">{key}</h3>
+                                    <p className="text-3xl font-bold text-primary">{value}</p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
+                </Section>
+            )}
+
+            {/* At a Glance (Client, Timeline, Team) */}
+            {(project.client || project.timeline || project.team) && (
+                <Section>
+                    <div className="container mx-auto px-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-y border-border py-12">
+                            {project.client && (
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-4 text-primary">Client</h3>
+                                    <p className="text-xl font-bold mb-1">{project.client.name}</p>
+                                    <p className="text-muted-foreground">{project.client.industry}</p>
+                                    {project.client.website && (
+                                        <a href={`https://${project.client.website}`} className="text-sm text-primary hover:underline mt-2 inline-block">
+                                            {project.client.website}
+                                        </a>
+                                    )}
+                                </div>
+                            )}
+                            {project.timeline && (
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-4 text-primary">Timeline</h3>
+                                    <p className="text-xl font-bold mb-1">{project.timeline.year}</p>
+                                    {project.timeline.duration && <p className="text-muted-foreground">{project.timeline.duration}</p>}
+                                </div>
+                            )}
+                            {project.team && (
+                                <div>
+                                    <h3 className="text-lg font-semibold mb-4 text-primary">Team</h3>
+                                    <ul className="space-y-2">
+                                        {project.team.map((member, i) => (
+                                            <li key={i} className="flex justify-between text-sm">
+                                                <span className="text-muted-foreground">{member.role}</span>
+                                                <span className="font-medium">{member.count}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </Section>
+            )}
+
+            {/* Challenge & Solution */}
+            {(project.challenge || project.solution) && (
+                <Section className="bg-muted/30">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                            {project.challenge && (
+                                <div>
+                                    <h2 className="text-3xl font-bold mb-6">The Challenge</h2>
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        {project.challenge}
+                                    </p>
+                                </div>
+                            )}
+                            {project.solution && (
+                                <div>
+                                    <h2 className="text-3xl font-bold mb-6">The Solution</h2>
+                                    <p className="text-lg text-muted-foreground leading-relaxed">
+                                        {project.solution}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                </Section>
+            )}
+
+            {/* Results / Impact */}
+            {project.results && (
+                <Section>
+                    <div className="container mx-auto px-4 max-w-4xl text-center">
+                        <h2 className="text-3xl font-bold mb-12">Key Results</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            {project.results.map((result, i) => (
+                                <div key={i} className="p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20">
+                                    <p className="text-4xl font-bold text-primary mb-2">{result.value}</p>
+                                    <p className="font-semibold mb-1">{result.metric}</p>
+                                    <p className="text-sm text-muted-foreground">{result.label}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Section>
+            )}
+
+            {/* Gallery */}
+            {project.gallery && (
+                <Section className="bg-black/20">
+                    <div className="container mx-auto px-4">
+                        <h2 className="text-3xl font-bold mb-12 text-center">Project Gallery</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {project.gallery.map((img, i) => (
+                                <div key={i} className="relative aspect-video rounded-xl overflow-hidden border border-white/10 shadow-lg group">
+                                    <Image
+                                        src={img}
+                                        alt={`Gallery image ${i + 1}`}
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </Section>
+            )}
+
+            {/* Testimonials */}
+            {project.testimonials && (
+                <Section>
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        {project.testimonials.map((testimonial, i) => (
+                            <div key={i} className="text-center">
+                                <blockquote className="text-2xl md:text-3xl font-medium leading-relaxed mb-8">
+                                    "{testimonial.quote}"
+                                </blockquote>
+                                <cite className="not-italic">
+                                    <div className="font-bold text-lg">{testimonial.author}</div>
+                                    <div className="text-primary">{testimonial.role}</div>
+                                </cite>
+                            </div>
                         ))}
                     </div>
-                </div>
-            </Section>
-
-            {/* Content Section */}
-            <Section>
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl font-bold mb-8">Project Overview</h2>
-                    <div className="prose prose-invert max-w-none">
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                            This project represents a significant milestone in {project.category.toLowerCase()} technology.
-                            We leveraged cutting-edge tools to deliver a solution that not only meets but exceeds performance expectations.
-                        </p>
-                        <ul className="space-y-4 mb-8">
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                                <span>Engineered for high availability and fault tolerance.</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                                <span>Optimized for sub-millisecond latency in critical paths.</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle2 className="w-6 h-6 text-primary flex-shrink-0" />
-                                <span>Seamlessly integrated with existing enterprise infrastructure.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </Section>
+                </Section>
+            )}
 
             <Footer />
         </main>

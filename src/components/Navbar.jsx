@@ -50,7 +50,10 @@ export function Navbar() {
                     <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-110">
                         <Image src="/logo.svg" alt="Insightexus Logo" fill className="object-contain" />
                     </div>
-                    <span className="text-2xl font-bold tracking-tighter hidden sm:inline-block bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">Insightexus</span>
+                    <span className="text-2xl font-bold tracking-tighter hidden sm:inline-block">
+                        <span className="text-foreground">Insight</span>
+                        <span className="text-primary">Exus</span>
+                    </span>
                 </Link>
 
                 {/* Desktop Nav */}

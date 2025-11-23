@@ -13,7 +13,10 @@ export function Footer() {
                             <div className="relative w-13 h-13 rounded-lg  from-primary to-accent flex items-center justify-center overflow-hidden">
                                 <Image src="/logo.svg" alt="Insightexus Logo" fill className="object-contain" />
                             </div>
-                            Insightexus
+                            <span className="font-bold">
+                                <span className="text-foreground">Insight</span>
+                                <span className="text-primary">Exus</span>
+                            </span>
                         </Link>
                         <p className="text-muted-foreground max-w-sm mb-8">
                             {content.footer.description}

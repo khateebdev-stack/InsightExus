@@ -181,7 +181,36 @@ export const content = {
                 latency: "< 1ms",
                 throughput: "100k TPS",
                 uptime: "99.999%"
-            }
+            },
+            client: {
+                name: "AlphaQuant Capital",
+                industry: "Financial Services",
+                website: "alphaquant.example.com"
+            },
+            timeline: {
+                duration: "18 Months",
+                year: "2024"
+            },
+            team: [
+                { role: "System Architects", count: 2 },
+                { role: "Rust Engineers", count: 4 },
+                { role: "Frontend Devs", count: 2 }
+            ],
+            challenge: "The client needed to replace a legacy Java-based trading system that was suffering from garbage collection pauses, causing significant financial loss during high-volatility market events. They required a zero-allocation system with deterministic latency profiles.",
+            solution: "We engineered a ground-up rewrite using Rust, leveraging its ownership model to guarantee memory safety without a garbage collector. The core engine uses a ring-buffer architecture for lock-free concurrency, while the frontend communicates via binary WebSocket protocols for real-time visualization.",
+            results: [
+                { metric: "99th Percentile Latency", value: "0.8ms", label: "Reduced from 150ms" },
+                { metric: "Infrastructure Cost", value: "-40%", label: "Due to efficiency" },
+                { metric: "Trade Volume", value: "3x", label: "Capacity increase" }
+            ],
+            gallery: ["/gallery-fintech-1.png", "/gallery-fintech-2.png"],
+            testimonials: [
+                {
+                    quote: "The latency improvements are simply unheard of. Insightexus didn't just build software; they gave us a competitive edge.",
+                    author: "Marcus Thorne",
+                    role: "CTO, AlphaQuant"
+                }
+            ]
         },
         {
             id: "ai-vision",
@@ -195,7 +224,23 @@ export const content = {
                 accuracy: "98.5%",
                 processing: "5PB/Day",
                 users: "50k+"
-            }
+            },
+            client: {
+                name: "DataSphere Corp",
+                industry: "Big Data Analytics",
+                website: "datasphere.example.com"
+            },
+            timeline: {
+                duration: "12 Months",
+                year: "2023"
+            },
+            challenge: "DataSphere was struggling to process unstructured video data at scale. Their existing pipeline took days to generate insights, making real-time decision making impossible for their retail clients.",
+            solution: "We implemented a distributed inference pipeline using Kubernetes and GPU acceleration. By optimizing the model architecture and implementing edge caching, we moved processing closer to the source.",
+            results: [
+                { metric: "Processing Time", value: "Real-time", label: "Down from 48h" },
+                { metric: "Model Accuracy", value: "+12%", label: "Improved precision" }
+            ],
+            gallery: ["/gallery-ai-1.png"]
         },
         {
             id: "global-logistics",
@@ -209,6 +254,10 @@ export const content = {
                 tracking: "10k+ Vehicles",
                 optimization: "30% Savings",
                 scale: "Global"
+            },
+            // Minimal data example to test conditional rendering
+            timeline: {
+                year: "2024"
             }
         },
         {
@@ -223,7 +272,13 @@ export const content = {
                 concurrent: "2M+",
                 latency: "Low",
                 quality: "4K HDR"
-            }
+            },
+            client: {
+                name: "StreamCo",
+                industry: "Entertainment"
+            },
+            challenge: "Scaling live events to millions of users without buffering.",
+            solution: "Custom CDN architecture with edge computing nodes."
         }
     ]
 };

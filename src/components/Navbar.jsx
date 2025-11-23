@@ -47,15 +47,18 @@ export function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="relative w-16 h-16 transition-transform duration-300 group-hover:scale-110">
-                        <Image src="/logo.svg" alt="Insightexus Logo" fill className="object-contain" />
+                    {/* <div className="relative transition-transform duration-300 group-hover:scale-110"> */}
+                    <div className="relative transition-transform duration-300 group-hover:scale-110">
+                        <Image className="" src="/logo2.png" alt="Insightexus Logo" width={50} height={40} />
                     </div>
+
+                    {/* </div> */}
                     <span className="text-2xl font-bold tracking-tighter hidden sm:inline-block">
                         <span className="text-foreground">Insight</span>
                         <span className="text-primary">Exus</span>
                     </span>
                 </Link>
-
+                {/* <Image className="w-20 h-20 object-contain" src="/logo.svg" alt="Insightexus Logo" fill /> */}
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
                     {navItems.map((item) => (
@@ -127,6 +130,6 @@ export function Navbar() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </header>
+        </header >
     );
 }

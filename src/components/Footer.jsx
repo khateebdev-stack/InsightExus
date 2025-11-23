@@ -11,7 +11,7 @@ export function Footer() {
                     <div className="col-span-1 md:col-span-2">
                         <Link href="/" className="flex items-center gap-3 mb-6 group">
                             <div className="relative w-16 h-16 rounded-lg from-primary to-accent flex items-center justify-center overflow-hidden">
-                                <Image src="/logo.svg" alt="Insightexus Logo" fill className="object-contain" />
+                                <Image src="/logo2.png" alt="Insightexus Logo" fill className="object-contain" />
                             </div>
                             <span className="text-2xl font-bold tracking-tighter">
                                 <span className="text-foreground">Insight</span>

@@ -131,9 +131,9 @@ export const content = {
     footer: {
         description: "Building the digital engines of tomorrow. Scalable, resilient, and ready for growth.",
         socials: [
-            { icon: "Twitter", href: "#" },
+            { icon: "Twitter", href: "https://twitter.com/insightexus" },
             // { icon: "Github", href: "#" },
-            { icon: "Linkedin", href: "#" }
+            { icon: "Linkedin", href: "https://www.linkedin.com/in/insightexus/" }
         ],
         services: {
             title: "Services",

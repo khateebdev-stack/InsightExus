@@ -59,9 +59,9 @@ export default function ContactPage() {
                     <Card className="p-8">
                         <h2 className="text-2xl font-bold mb-6">{content.contact.form.title}</h2>
                         <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label htmlFor="name" className="text-sm font-medium">{content.contact.form.fields.name}</label>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="space-y-3">
+                                    <label htmlFor="name" className="text-sm font-medium ml-1">{content.contact.form.fields.name}</label>
                                     <input
                                         id="name"
                                         type="text"
@@ -69,8 +69,8 @@ export default function ContactPage() {
                                         placeholder="John Doe"
                                     />
                                 </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium">{content.contact.form.fields.email}</label>
+                                <div className="space-y-3">
+                                    <label htmlFor="email" className="text-sm font-medium ml-1">{content.contact.form.fields.email}</label>
                                     <input
                                         id="email"
                                         type="email"
@@ -80,35 +80,47 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <label htmlFor="service" className="text-sm font-medium">{content.contact.form.fields.service}</label>
-                                    <select
-                                        id="service"
-                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground appearance-none"
-                                    >
-                                        <option>Web Development</option>
-                                        <option>Mobile App</option>
-                                        <option>AI Solution</option>
-                                        <option>Consulting</option>
-                                    </select>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div className="space-y-3">
+                                    <label htmlFor="service" className="text-sm font-medium ml-1">{content.contact.form.fields.service}</label>
+                                    <div className="relative">
+                                        <select
+                                            id="service"
+                                            className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground appearance-none cursor-pointer"
+                                        >
+                                            {content.contact.form.options.services.map((option, i) => (
+                                                <option key={i} value={option}>{option}</option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="budget" className="text-sm font-medium">{content.contact.form.fields.budget}</label>
-                                    <select
-                                        id="budget"
-                                        className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground appearance-none"
-                                    >
-                                        <option>$5k - $10k</option>
-                                        <option>$10k - $25k</option>
-                                        <option>$25k - $50k</option>
-                                        <option>$50k+</option>
-                                    </select>
+                                <div className="space-y-3">
+                                    <label htmlFor="budget" className="text-sm font-medium ml-1">{content.contact.form.fields.budget}</label>
+                                    <div className="relative">
+                                        <select
+                                            id="budget"
+                                            className="w-full px-4 py-3 rounded-lg bg-background border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-foreground appearance-none cursor-pointer"
+                                        >
+                                            {content.contact.form.options.budgets.map((option, i) => (
+                                                <option key={i} value={option}>{option}</option>
+                                            ))}
+                                        </select>
+                                        <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-muted-foreground">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="subject" className="text-sm font-medium">{content.contact.form.fields.subject}</label>
+                            <div className="space-y-3">
+                                <label htmlFor="subject" className="text-sm font-medium ml-1">{content.contact.form.fields.subject}</label>
                                 <input
                                     id="subject"
                                     type="text"
@@ -117,8 +129,8 @@ export default function ContactPage() {
                                 />
                             </div>
 
-                            <div className="space-y-2">
-                                <label htmlFor="message" className="text-sm font-medium">{content.contact.form.fields.message}</label>
+                            <div className="space-y-3">
+                                <label htmlFor="message" className="text-sm font-medium ml-1">{content.contact.form.fields.message}</label>
                                 <textarea
                                     id="message"
                                     rows={5}

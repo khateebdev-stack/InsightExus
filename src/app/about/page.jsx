@@ -41,15 +41,15 @@ export default function AboutPage() {
                     </div>
                     <div className="grid grid-cols-1 gap-6">
                         <Card className="bg-gradient-to-br from-white/5 to-transparent border-primary/20">
-                            <h3 className="text-xl font-bold mb-2 text-white">20+ Years Experience</h3>
+                            <h3 className="text-xl font-bold mb-2 text-foreground">20+ Years Experience</h3>
                             <p className="text-muted-foreground">Deep industry knowledge across diverse sectors and technologies.</p>
                         </Card>
                         <Card className="bg-gradient-to-br from-white/5 to-transparent border-primary/20">
-                            <h3 className="text-xl font-bold mb-2 text-white">End-to-End Delivery</h3>
+                            <h3 className="text-xl font-bold mb-2 text-foreground">End-to-End Delivery</h3>
                             <p className="text-muted-foreground">From initial system design to final deployment and maintenance.</p>
                         </Card>
                         <Card className="bg-gradient-to-br from-white/5 to-transparent border-primary/20">
-                            <h3 className="text-xl font-bold mb-2 text-white">Niche Expertise</h3>
+                            <h3 className="text-xl font-bold mb-2 text-foreground">Niche Expertise</h3>
                             <p className="text-muted-foreground">Specialized in WebRTC, Live Streaming, and AI integration.</p>
                         </Card>
                     </div>

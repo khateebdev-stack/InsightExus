@@ -97,50 +97,59 @@ export const content = {
         info: {
             email: {
                 title: "Email Us",
-                value: "contact@insightexus.com",
+                value: "admin@insightexus.com",
                 desc: "We'll respond within 24 hours."
             },
             phone: {
                 title: "Call Us",
-                value: "+1 (555) 123-4567",
+                value: "+92 (310) 141-6411",
                 desc: "Mon-Fri from 9am to 6pm."
             },
             address: {
                 title: "Visit Us",
-                value: "123 Tech Park Avenue, Silicon Valley, CA 94025"
+                value: "Islambad, Pakistan",
+                desc: "Open for appointments."
             }
         },
         form: {
-            title: "Send a Message",
+            title: "Send us a Message",
             fields: {
-                name: "Name",
-                email: "Email",
+                name: "Full Name",
+                email: "Email Address",
+                service: "Service Interested In",
+                budget: "Estimated Budget",
                 subject: "Subject",
-                message: "Message",
-                service: "Service Type",
-                budget: "Budget Range",
-                timeline: "Timeline"
+                message: "Message"
+            },
+            options: {
+                services: ["Scalable Systems", "Real-Time Tech", "AI Integration", "Consulting", "Other"],
+                budgets: ["$10k - $25k", "$25k - $50k", "$50k - $100k", "$100k+"]
             },
             button: "Send Message"
         }
     },
     footer: {
-        description: "Building Digital Engines for the next generation of high-growth startups and enterprises. Scalable, secure, and future-proof.",
+        description: "Building the digital engines of tomorrow. Scalable, resilient, and ready for growth.",
+        socials: [
+            { icon: "Twitter", href: "#" },
+            // { icon: "Github", href: "#" },
+            { icon: "Linkedin", href: "#" }
+        ],
         services: {
             title: "Services",
-            items: ["Mobile Development", "Web Architecture", "AI Solutions", "DevOps & Cloud"]
+            items: ["Scalable Systems", "Real-Time Tech", "AI Integration", "Consulting"]
         },
         company: {
             title: "Company",
             items: [
-                { label: "About Us", href: "/about" },
-                { label: "Contact", href: "/contact" },
+                { label: "About", href: "/about" },
                 { label: "Careers", href: "#" },
-                { label: "Privacy Policy", href: "#" }
+                { label: "Blog", href: "#" },
+                { label: "Contact", href: "/contact" }
             ]
         },
         copyright: "Insightexus. All rights reserved.",
-        credit: "Designed & Built by Insightexus Team."
+        credit: "Designed & Built by Insightexus"
     },
     testimonials: {
         title: "Client Success",

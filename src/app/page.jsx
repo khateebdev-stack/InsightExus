@@ -8,7 +8,7 @@ import { Team } from "@/components/Team";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
-import { PortfolioSection } from "@/components/PortfolioSection";
+import { HorizontalPortfolio } from "@/components/HorizontalPortfolio";
 import { Process } from "@/components/Process";
 import { DigitalEngine } from "@/components/DigitalEngine";
 import { Testimonials } from "@/components/Testimonials";
@@ -44,14 +44,9 @@ export default function Home() {
                 {/* Hero Content */}
                 <div className="container mx-auto px-4 z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <motion.div
-                        style={{ opacity, y }}
                         className="flex flex-col gap-6 text-center lg:text-left pl-0 lg:pl-8"
                     >
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
+                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
                             <span className="inline-block px-4 py-1.5 rounded-full border border-primary/20 bg-primary/10 text-primary text-sm font-medium mb-4">
                                 {content.hero.badge}
                             </span>
@@ -66,7 +61,7 @@ export default function Home() {
                             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                                 {content.hero.description}
                             </p>
-                        </motion.div>
+                        </div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -107,7 +102,7 @@ export default function Home() {
             <WhyUs />
 
             {/* Portfolio Section */}
-            <PortfolioSection />
+            <HorizontalPortfolio />
 
             {/* Core Services Preview */}
             <Section className="bg-background">

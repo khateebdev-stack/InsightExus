@@ -9,10 +9,11 @@ import { content } from "@/lib/content";
 export function ImprovedContactForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isUploading, setIsUploading] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error'
+    const [submitStatus, setSubmitStatus] = useState(null);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
+        subject: "",
         service: content.contact.form.options.services[0],
         budget: content.contact.form.options.budgets[0],
         message: ""
@@ -26,7 +27,6 @@ export function ImprovedContactForm() {
 
         try {
             setIsUploading(true);
-            // Convert files to base64
             const fileDataPromises = files.map(file => {
                 return new Promise((resolve, reject) => {
                     const reader = new FileReader();
@@ -54,6 +54,7 @@ export function ImprovedContactForm() {
                 body: JSON.stringify({
                     name: formData.name,
                     email: formData.email,
+                    subject: formData.subject,
                     service: formData.service,
                     budget: formData.budget,
                     message: formData.message,
@@ -65,11 +66,10 @@ export function ImprovedContactForm() {
 
             if (response.ok && data.success) {
                 setSubmitStatus("success");
-
-                // Reset form
                 setFormData({
                     name: "",
                     email: "",
+                    subject: "",
                     service: content.contact.form.options.services[0],
                     budget: content.contact.form.options.budgets[0],
                     message: ""
@@ -89,7 +89,6 @@ export function ImprovedContactForm() {
 
     return (
         <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name & Email */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium text-foreground">Name *</label>
@@ -117,7 +116,19 @@ export function ImprovedContactForm() {
                 </div>
             </div>
 
-            {/* Service & Budget */}
+            <div className="space-y-2">
+                <label htmlFor="subject" className="text-sm font-medium text-foreground">Subject *</label>
+                <input
+                    required
+                    type="text"
+                    id="subject"
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    placeholder="What's your project about?"
+                    className="w-full bg-background border-2 border-muted-foreground/20 hover:border-primary/40 focus:border-primary rounded-lg px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none transition-colors"
+                />
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
                     <label htmlFor="service" className="text-sm font-medium text-foreground">Service Interest</label>
@@ -147,7 +158,6 @@ export function ImprovedContactForm() {
                 </div>
             </div>
 
-            {/* Rich Text Editor */}
             <div className="space-y-2">
                 <label className="text-sm font-medium text-foreground">Project Details *</label>
                 <RichTextEditor
@@ -157,7 +167,6 @@ export function ImprovedContactForm() {
                 />
             </div>
 
-            {/* Submit Button & Status */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pt-4">
                 <div className="flex-1 min-h-[24px]">
                     {submitStatus === "success" && (

@@ -91,7 +91,7 @@ export function ImprovedContactForm() {
         <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
-                    <label htmlFor="name" className="text-sm font-medium text-foreground">Name *</label>
+                    <label htmlFor="name" className="text-sm font-medium text-foreground mb-3">Name *</label>
                     <input
                         required
                         type="text"
@@ -103,7 +103,7 @@ export function ImprovedContactForm() {
                     />
                 </div>
                 <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-foreground">Email *</label>
+                    <label htmlFor="email" className="text-sm font-medium text-foreground mb-3">Email *</label>
                     <input
                         required
                         type="email"
@@ -117,7 +117,7 @@ export function ImprovedContactForm() {
             </div>
 
             <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-foreground">Subject *</label>
+                <label htmlFor="subject" className="text-sm font-medium text-foreground mb-3">Subject *</label>
                 <input
                     required
                     type="text"
@@ -131,7 +131,7 @@ export function ImprovedContactForm() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-2">
-                    <label htmlFor="service" className="text-sm font-medium text-foreground">Service Interest</label>
+                    <label htmlFor="service" className="text-sm font-medium text-foreground mb-3">Service Interest</label>
                     <select
                         id="service"
                         value={formData.service}
@@ -144,7 +144,7 @@ export function ImprovedContactForm() {
                     </select>
                 </div>
                 <div className="space-y-2">
-                    <label htmlFor="budget" className="text-sm font-medium text-foreground">Estimated Budget</label>
+                    <label htmlFor="budget" className="text-sm font-medium text-foreground mb-3">Estimated Budget</label>
                     <select
                         id="budget"
                         value={formData.budget}
@@ -159,7 +159,7 @@ export function ImprovedContactForm() {
             </div>
 
             <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground">Project Details *</label>
+                <label className="text-sm font-medium text-foreground mb-3">Project Details *</label>
                 <RichTextEditor
                     value={formData.message}
                     onChange={(html) => setFormData({ ...formData, message: html })}

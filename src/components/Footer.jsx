@@ -9,11 +9,11 @@ export function Footer() {
             <div className="max-w-7xl mx-auto px-4 md:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-2">
-                        <Link href="/" className="text-2xl font-bold tracking-tighter flex items-center gap-2 mb-6">
-                            <div className="relative w-13 h-13 rounded-lg  from-primary to-accent flex items-center justify-center overflow-hidden">
+                        <Link href="/" className="flex items-center gap-3 mb-6 group">
+                            <div className="relative w-16 h-16 rounded-lg from-primary to-accent flex items-center justify-center overflow-hidden">
                                 <Image src="/logo.svg" alt="Insightexus Logo" fill className="object-contain" />
                             </div>
-                            <span className="font-bold">
+                            <span className="text-2xl font-bold tracking-tighter">
                                 <span className="text-foreground">Insight</span>
                                 <span className="text-primary">Exus</span>
                             </span>

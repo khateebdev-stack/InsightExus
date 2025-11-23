@@ -46,8 +46,8 @@ export function Navbar() {
             )}
         >
             <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-110">
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="relative w-16 h-16 transition-transform duration-300 group-hover:scale-110">
                         <Image src="/logo.svg" alt="Insightexus Logo" fill className="object-contain" />
                     </div>
                     <span className="text-2xl font-bold tracking-tighter hidden sm:inline-block">

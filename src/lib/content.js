@@ -102,7 +102,7 @@ export const content = {
             },
             phone: {
                 title: "Call Us",
-                value: "+92 (310) 141-6411",
+                value: "+92 (310) 111-4611",
                 desc: "Mon-Fri from 9am to 6pm."
             },
             address: {
@@ -203,7 +203,56 @@ export const content = {
                 { metric: "Infrastructure Cost", value: "-40%", label: "Due to efficiency" },
                 { metric: "Trade Volume", value: "3x", label: "Capacity increase" }
             ],
+            businessImpact: {
+                roi: "300% ROI in first quarter",
+                efficiency: "Reduced operational overhead by 40%",
+                growth: "Enabled entry into 2 new Asian markets"
+            },
+            maintenance: {
+                plan: "24/7 automated monitoring with zero-downtime rolling updates.",
+                guarantee: "99.999% SLA availability"
+            },
+            scalability: {
+                current: "Handles 100k TPS",
+                future: "Architected to scale to 1M TPS without refactoring"
+            },
             gallery: ["/gallery-fintech-1.png", "/gallery-fintech-2.png"],
+            technologyDetails: {
+                stack: [
+                    { name: "Rust", rationale: "Zero-cost abstractions and memory safety without GC pauses" },
+                    { name: "WebAssembly", rationale: "Near-native performance in the browser for real-time UI" },
+                    { name: "React", rationale: "Component reusability for complex trading dashboard" },
+                    { name: "WebSocket", rationale: "Full-duplex communication for sub-millisecond data streaming" }
+                ],
+                architecture: "Microservices with event-driven architecture using message queues for decoupling"
+            },
+            development: {
+                methodology: "Agile with 2-week sprints",
+                totalSprints: 36,
+                teamStructure: "Cross-functional pods with embedded QA",
+                cicd: "GitLab CI/CD with automated testing and blue-green deployments"
+            },
+            security: {
+                measures: [
+                    "End-to-end encryption for all trade data",
+                    "Multi-factor authentication with hardware keys",
+                    "Regular penetration testing (quarterly)",
+                    "SOC 2 Type II compliance"
+                ],
+                certifications: ["SOC 2", "ISO 27001"]
+            },
+            performance: {
+                metrics: [
+                    { name: "Average Latency", value: "0.6ms", benchmark: "Industry standard: 50ms" },
+                    { name: "Memory Usage", value: "120MB", benchmark: "Previous system: 2GB" },
+                    { name: "CPU Efficiency", value: "15% peak load", benchmark: "Previous: 85%" }
+                ]
+            },
+            futureRoadmap: [
+                "AI-based trade prediction module (Q2 2025)",
+                "Multi-region deployment for global latency reduction (Q3 2025)",
+                "Integration with DeFi protocols (Q4 2025)"
+            ],
             testimonials: [
                 {
                     quote: "The latency improvements are simply unheard of. Insightexus didn't just build software; they gave us a competitive edge.",
@@ -240,6 +289,19 @@ export const content = {
                 { metric: "Processing Time", value: "Real-time", label: "Down from 48h" },
                 { metric: "Model Accuracy", value: "+12%", label: "Improved precision" }
             ],
+            businessImpact: {
+                roi: "Saved $2M annually in processing costs",
+                efficiency: "Automated 95% of manual data tagging",
+                growth: "Platform adoption grew by 200%"
+            },
+            maintenance: {
+                plan: "Quarterly model retraining and performance tuning.",
+                guarantee: "Model drift monitoring and auto-correction"
+            },
+            scalability: {
+                current: "5PB daily ingestion",
+                future: "Horizontal scaling to support exabyte-scale datasets"
+            },
             gallery: ["/gallery-ai-1.png"]
         },
         {
@@ -258,6 +320,19 @@ export const content = {
             // Minimal data example to test conditional rendering
             timeline: {
                 year: "2024"
+            },
+            businessImpact: {
+                roi: "Fuel costs reduced by 15%",
+                efficiency: "Delivery times improved by 20%",
+                growth: "Expanded fleet by 500 vehicles"
+            },
+            maintenance: {
+                plan: "Real-time telemetry monitoring.",
+                guarantee: "99.9% System Uptime"
+            },
+            scalability: {
+                current: "10k active vehicles",
+                future: "Tested for 100k concurrent connections"
             }
         },
         {
@@ -278,7 +353,20 @@ export const content = {
                 industry: "Entertainment"
             },
             challenge: "Scaling live events to millions of users without buffering.",
-            solution: "Custom CDN architecture with edge computing nodes."
+            solution: "Custom CDN architecture with edge computing nodes.",
+            businessImpact: {
+                roi: "Ad revenue increased by 50%",
+                efficiency: "Bandwidth costs reduced by 30%",
+                growth: "User retention up by 25%"
+            },
+            maintenance: {
+                plan: "24/7 NOC support during live events.",
+                guarantee: "Zero buffering guarantee"
+            },
+            scalability: {
+                current: "2M concurrent viewers",
+                future: "Elastic scaling for 10M+ viewers"
+            }
         }
     ]
 };

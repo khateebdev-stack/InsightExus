@@ -144,7 +144,7 @@ export default function Home() {
             <Team />
 
             {/* CTA Section */}
-            <Section className="bg-primary/5 border-y border-primary/10">
+            <Section className=" ">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="text-3xl md:text-4xl font-bold mb-6">{content.cta.title}</h2>
                     <p className="text-muted-foreground max-w-2xl mx-auto mb-8 text-lg">

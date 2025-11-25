@@ -51,7 +51,7 @@ export function WhyUs() {
                         </p>
                         <ul className="space-y-4 mb-8">
                             {[
-                                "20+ Years of Industry Experience",
+                                // "20+ Years of Industry Experience",
                                 "Proprietary 'Digital Engine' Architecture",
                                 "Focus on High-Growth & Enterprise Clients",
                                 "Direct Access to Senior Engineers"

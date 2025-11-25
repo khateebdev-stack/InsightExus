@@ -135,7 +135,8 @@ export async function POST(request) {
         const clientMailOptions = {
             from: process.env.GMAIL_USER,
             to: email,
-            subject: `✅ Message Confirmation  - ${subject}`,
+            subject: `✅ Message Delivery Confirmation by InsightExus  `,
+            // subject: `✅ Message Confirmation  - ${subject}`,
             html: `
                 <!DOCTYPE html>
                 <html>
@@ -164,7 +165,7 @@ export async function POST(request) {
                                         <td style="padding: 50px 40px;">
                                             <div style="text-align: center; margin-bottom: 30px;">
                                                 <div style="background: #10b981; width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                                    <span style="color: #ffffff; font-size: 32px;">✓</span>
+                                                    <span style="color: #ffffff; font-size: 32px; align-items: center; justify-content: center;">✓</span>
                                                 </div>
                                             </div>
                                             
